@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    let target = "https://gainpanel.com/Survey?projectId=qZydlKx6";
+    params.forEach((value, key) => {
+      target += "&" + key + "=" + encodeURIComponent(value);
+    });
+    window.location.href = target;
+  </script>
+</head>
+<body>Redirecting…</body>
+</html>
