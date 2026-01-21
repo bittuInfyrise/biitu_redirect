@@ -1,96 +1,221 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Welcome</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", Arial, sans-serif;
-      background: #f5f6fa;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfyHire – Smart Hiring Platform</title>
 
-    .container {
-      background: #fff;
-      padding: 2.5rem;
-      border-radius: 14px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 420px;
-      text-align: center;
-    }
+    <!-- SEO -->
+    <meta name="description" content="InfyHire is a smart hiring platform to hire talent faster and get hired easily.">
 
-    h1 {
-      margin-bottom: 0.5rem;
-      font-size: 1.8rem;
-      font-weight: 700;
-    }
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    p {
-      margin-bottom: 2rem;
-      color: #777;
-    }
+<style>
+:root{
+    --primary:#19A19F;
+    --primary-dark:#0f7f7d;
+    --glass:rgba(255,255,255,0.15);
+    --blur:blur(14px);
+}
 
-    a {
-      color: #4b7bec;
-      text-decoration: none;
-      font-weight: 500;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f7ffff;color:#222;}
+a{text-decoration:none;transition:.3s}
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+/* ===== HERO ===== */
+header{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+      linear-gradient(135deg,rgba(25,161,159,.85),rgba(0,0,0,.55)),
+      url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80');
+    background-size:cover;
+    color:#fff;
+    padding:40px 20px;
+}
+header h1{
+    font-size:64px;
+    letter-spacing:1px;
+}
+header p{
+    font-size:22px;
+    margin:15px 0 25px;
+    opacity:.95;
+}
 
-    input {
-      padding: 0.9rem 1rem;
-      font-size: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      outline: none;
-      transition: 0.2s;
-    }
+/* Buttons */
+.btn{
+    display:inline-block;
+    padding:14px 34px;
+    border-radius:40px;
+    background:#fff;
+    color:var(--primary);
+    font-weight:600;
+    margin:10px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+}
 
-    input:focus {
-      border-color: #4b7bec;
-      box-shadow: 0 0 0 3px rgba(75,123,236,0.15);
-    }
+/* ===== JOB HIGHLIGHT ===== */
+.job-section{
+    max-width:1200px;
+    margin:-80px auto 80px;
+    padding:0 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+.job-card{
+    position:relative;
+    padding:70px 45px;
+    border-radius:26px;
+    color:#fff;
+    background:
+      linear-gradient(135deg,rgba(25,161,159,.85),rgba(0,0,0,.55)),
+      url('https://images.unsplash.com/photo-1581091215361-2be74c9df9a2?auto=format&fit=crop&w=800&q=60');
+    background-size:cover;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+.job-card h3{font-size:32px;margin-bottom:15px;}
+.job-card p{opacity:.95;margin-bottom:25px;font-size:17px;}
+.job-card a{
+    background:#fff;
+    color:var(--primary);
+    padding:12px 28px;
+    border-radius:30px;
+    font-weight:600;
+}
+.job-card:hover{
+    transform:translateY(-10px);
+}
 
-    button {
-      padding: 0.9rem 1rem;
-      font-size: 1rem;
-      background: #4b7bec;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+/* ===== SECTIONS ===== */
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:90px 20px;
+}
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+.section-title h2{
+    font-size:40px;
+    color:var(--primary);
+}
 
-    button:hover {
-      background: #3867d6;
-    }
-  </style>
+/* Glass Cards */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+.card{
+    padding:40px;
+    border-radius:26px;
+    background:var(--glass);
+    backdrop-filter:var(--blur);
+    box-shadow:0 25px 50px rgba(0,0,0,.12);
+}
+.card h3{font-size:22px;margin-bottom:12px;}
+.card:hover{
+    transform:translateY(-6px);
+}
+
+/* ===== CTA ===== */
+.cta{
+    max-width:1100px;
+    margin:80px auto;
+    padding:90px 20px;
+    text-align:center;
+    border-radius:30px;
+    color:#fff;
+    background:
+      linear-gradient(135deg,rgba(25,161,159,.9),rgba(0,0,0,.6)),
+      url('https://images.unsplash.com/photo-1521790366327-86a71c0c8c84?auto=format&fit=crop&w=1950&q=80');
+    background-size:cover;
+}
+.cta h2{font-size:42px;margin-bottom:15px}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#eafefe;
+    font-size:14px;
+}
+</style>
+
 </head>
 <body>
-  <div class="container">
-    <h1>Biitu Render Site</h1>
-    <p><a href="/survey">Go to Survey</a></p>
 
-    <h2>Login</h2>
+<header>
+    <h1>InfyHire</h1>
+    <p>Hire Smart. Get Hired Faster.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.infyrise.infyhire" class="btn" target="_blank">Install App</a>
+    <a href="https://infyhire.com" class="btn" target="_blank">Visit Website</a>
+</header>
 
-    <form action="/login" method="POST">
-      <input type="email" name="email" placeholder="Email address" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <button type="submit">Sign In</button>
-    </form>
-  </div>
+
+<section class="job-section">
+    <div class="job-card">
+        <h3>Post a Job</h3>
+        <p>Hire top talent faster by posting your job openings on InfyHire.</p>
+        <a href="https://infyhire.com" target="_blank">Post Now</a>
+    </div>
+    <div class="job-card">
+        <h3>Search Jobs</h3>
+        <p>Find the perfect job matching your skills and preferences with InfyHire.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.infyrise.infyhire" target="_blank">Search Now</a>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>About InfyHire</h2>
+    </div>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+        InfyHire is a modern hiring platform that connects talented job seekers with trusted companies using smart technology and clean user experience.
+    </p>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>Key Features</h2>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <h3>For Job Seekers</h3>
+            <p>Easy apply, smart job suggestions, resume upload and status tracking.</p>
+        </div>
+        <div class="card">
+            <h3>For Companies</h3>
+            <p>Post jobs fast, filter candidates and manage hiring from one dashboard.</p>
+        </div>
+        <div class="card">
+            <h3>App + Web</h3>
+            <p>Same smooth experience on mobile app and website.</p>
+        </div>
+    </div>
+</section>
+
+<div class="cta">
+    <h2>Start Hiring Today</h2>
+    <p>Join InfyHire and experience next-gen recruitment.</p>
+    <a href="https://infyhire.com" class="btn" target="_blank">Get Started</a>
+</div>
+
+<footer>
+    © <?php echo date('Y'); ?> InfyHire. All rights reserved.
+</footer>
+
 </body>
 </html>
